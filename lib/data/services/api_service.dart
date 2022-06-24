@@ -1,17 +1,14 @@
+// Package imports:
 import 'package:dio/dio.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+
+// Project imports:
 import 'package:softwareone/data/models/token_model.dart';
-import 'package:softwareone/domain/repository/countries_repository.dart';
 
 class ApiService {
   final Dio client;
 
-  final CountiesRepository countriesRepository;
-
-  ApiService({
-    required this.countriesRepository,
-    required this.client,
-  });
+  ApiService(this.client);
 
   Future<TokenModel?> getToken() async {
     try {
